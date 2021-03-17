@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "684995833646",
+    "project_id": "chatter-b221e",
+    "storage_bucket": "chatter-b221e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684995833646:android:72303a7ed37d58e2e594bf",
+        "android_client_info": {
+          "package_name": "me.calibri.chatter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684995833646-defeislu4p7d1h33qgscf7978hec4684.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO4OZU7ooH4pmz0UnO9BC36-CQ6WdfrHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684995833646-defeislu4p7d1h33qgscf7978hec4684.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

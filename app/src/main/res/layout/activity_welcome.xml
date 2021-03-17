@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:text="Welcome"
+        android:id="@+id/greeting_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:text="Register"
+        android:id="@+id/welcome_button_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="25dp"
+        />
+    <Button
+        android:text="Login"
+        android:id="@+id/welcome_button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="25dp"
+        />
+
+</LinearLayout>
