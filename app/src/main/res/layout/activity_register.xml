@@ -69,8 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:background="@color/colorPrimaryDark"
-            android:backgroundTint="#FFFFFF"
+            android:backgroundTint="@color/colorAccent"
             android:text="Register"
             android:textColor="@android:color/white" />
     </LinearLayout>

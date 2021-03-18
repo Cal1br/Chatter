@@ -10,7 +10,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_register.*
 
-//TODO binder
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
@@ -73,9 +72,9 @@ class RegisterActivity : AppCompatActivity() {
                         userHashMap["username"] = username
                         userHashMap["uid"] = firebaseUserID
                         userHashMap["profile"] =
-                            "https://firebasestorage.googleapis.com/v0/b/chatter-b221e.appspot.com/o/defaultProfile.png?alt=media&token=61ff6f44-0aac-4fef-8fe7-63dba9693545"
+                            "https://firebasestorage.googleapis.com/v0/b/chatter-b221e.appspot.com/o/defaultProfile.png?alt=media&token=8f2c5016-fbc0-4fd4-a08d-4287e41e3488"
                         userHashMap["cover"] =
-                            "https://firebasestorage.googleapis.com/v0/b/chatter-b221e.appspot.com/o/defaultCover.jpg?alt=media&token=2cfa985e-be86-45e2-8f6d-d06021314d86"
+                            "https://firebasestorage.googleapis.com/v0/b/chatter-b221e.appspot.com/o/defaultCover.jpg?alt=media&token=cc109e44-9b50-4a22-846b-1bb24020859a"
                         userHashMap["status"] = "offline"
                         userHashMap["search"] = username.toLowerCase()
                         userHashMap["tumblr"] = "https://m.tumblr.com/"
@@ -87,7 +86,6 @@ class RegisterActivity : AppCompatActivity() {
                                 if (task.isSuccessful) {
                                     val intent =
                                         Intent(this@RegisterActivity, MainActivity::class.java)
-                                    //TODO 19:00 5то клипче, не разбрах какво прави това, и да го коментирам
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                                     startActivity(intent)
                                     finish()

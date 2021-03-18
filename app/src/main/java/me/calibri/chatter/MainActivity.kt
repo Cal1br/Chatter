@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
+import me.calibri.chatter.ModelClasses.Chat
 import me.calibri.chatter.ModelClasses.Users
 import me.calibri.chatter.fragments.ChatsFragment
 import me.calibri.chatter.fragments.SearchFragment
@@ -38,18 +39,41 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "" //правим го това за да сложим името на човека?
-//TODO replace with binder
+
         val tabLayout: TabLayout = findViewById(R.id.tab_layout)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
-        val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
-        //добавяме фрагментите на менюто
-        viewPagerAdapter.addFragment(ChatsFragment(), "Chats")
-        viewPagerAdapter.addFragment(SearchFragment(), "Search")
-        viewPagerAdapter.addFragment(SettingsFragment(), "Settings")
 
-        viewPager.adapter = viewPagerAdapter
-        tabLayout.setupWithViewPager(viewPager)
+        //добавяме фрагментите на менюто, и правим така че ако има unread съобщения, да се покажат
+        val ref = FirebaseDatabase.getInstance().reference.child("Chats")
+        ref!!.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(p0: DataSnapshot) {
+                val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+                var countUnreadMessages = 0
+                for(dataSnapshot in p0.children){
+                    val chat = dataSnapshot.getValue(Chat::class.java)
+                    if(chat!!.getReceiver().equals(fireBaseUser!!.uid)&& !chat.getIsSeen())
+                    {
+                        countUnreadMessages +=1
+                    }
+                }
+                if(countUnreadMessages == 0){
+                    viewPagerAdapter.addFragment(ChatsFragment(),"Chats")
+                }
+                else{
+                    viewPagerAdapter.addFragment(ChatsFragment(),"(${countUnreadMessages}) unread messages")
+                }
 
+                viewPagerAdapter.addFragment(SearchFragment(), "Search")
+
+                viewPagerAdapter.addFragment(SettingsFragment(), "Settings")
+
+                viewPager.adapter = viewPagerAdapter
+                tabLayout.setupWithViewPager(viewPager)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
         //display the` username and profile picture
 
         refUsers!!.addValueEventListener(object : ValueEventListener {

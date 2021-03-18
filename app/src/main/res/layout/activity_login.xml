@@ -56,12 +56,12 @@
             />
 
         <Button
+            android:text="Login"
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Login"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorAccent"/>
     </LinearLayout>
 </RelativeLayout>

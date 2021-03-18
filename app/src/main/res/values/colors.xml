@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#EFEFEF</color>
+    <color name="colorPrimary">#FEFEFE</color>
     <color name="colorPrimaryVariant">#B4DAFF</color>
     <color name="colorPrimaryDark">#FF000000</color>
     <color name="colorPrimaryDarkVariant">#1C0D30</color>
@@ -9,6 +9,7 @@
     <color name="colorAccent">#0292F3</color>
     <color name="colorAccentVariant">#FC81FFFF</color>
     <color name="colorProfile">#1C223c</color>
+    <color name="chatColor">#e6e6e6</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <!--<color name="purple_200">#FFBB86FC</color>

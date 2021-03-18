@@ -71,13 +71,18 @@ class SearchFragment : Fragment() {
 
                         }
                     }
-                    userAdaptor = UserAdaptor(context!!, mUsers!!,false)
-                    recyclerView!!.adapter = userAdaptor
+                    try {
+                        userAdaptor = UserAdaptor(context!!, mUsers!!,false)
+                        recyclerView!!.adapter = userAdaptor
+                    }
+                    catch (e: RuntimeException){
+
+                    }
+
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
 
@@ -104,7 +109,6 @@ class SearchFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
     }
